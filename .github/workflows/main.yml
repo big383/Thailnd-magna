@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>THAILND MAGNA</title>
+</head>
+
+<body>
+
+     <h1>THAILND MAGNA</h1>
+    <p></p>
+
+</body>
+
+</html>
+ <himl> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manga Reader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .manga-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+    .manga-item {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 200px;
+    }
+    .manga-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .manga-item h3 {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Manga Reader</h1>
+  <div class="manga-list" id="mangaList"></div>
+
+  <script>
+    async function fetchMangas() {
+      const response = await fetch('http://localhost:5000/api/manga');
+      const mangas = await response.json();
+
+      const mangaList = document.getElementById('mangaList');
+      mangas.forEach((manga) => {
+        const mangaItem = document.createElement('div');
+        mangaItem.classList.add('manga-item');
+        mangaItem.innerHTML = `
+          <img src="${manga.coverImage}" alt="${manga.title}">
+          <h3>${manga.title}</h3>
+        `;
+        mangaList.appendChild(mangaItem);
+      });
+    }
+
+    fetchMangas();
+  </script>
+</body>
+</html>
+ <base href="mkdir manga-reader
+ cd manga-reader
+ npm init -y
+ npm install express mongoose multer
+ ">
