@@ -1,1 +1,0 @@
-# Thailnd-magna
